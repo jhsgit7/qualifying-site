@@ -38,16 +38,16 @@ export default function Home() {
         <div className="card">
           <p className="small">for yumi</p>
           <h1>
-            유미야
+            유미야!
             <br />
             500일 축하해
             <br />
             사랑해🩵
           </h1>
           <p className="sub">
-            우리 함께한 500일,
+            우주우주우주우주만큼 사랑해애💕,
             <br />
-            앞으로도 예쁘게 오래오래 가자 🤍
+            세상에서 유미를 젤 사랑하는 석이가🤍
           </p>
         </div>
       </main>
