@@ -54,7 +54,7 @@ export default function Home() {
             </p>
 
             <a href="#letter" className="scrollButton">
-              밑으로 내려서 편지 보기❤️
+              눌러서 편지 보기❤️
             </a>
           </div>
         </section>
