@@ -1,3 +1,5 @@
+"use client";
+
 export default function Home() {
   const floatingItems = [
     { type: "🤍", left: "8%", top: "12%", size: "32px", delay: "0s", duration: "6s" },
@@ -69,8 +71,7 @@ export default function Home() {
         .overlay {
           position: absolute;
           inset: 0;
-          background-image:
-            radial-gradient(rgba(255, 255, 255, 0.25) 1px, transparent 1px);
+          background-image: radial-gradient(rgba(255, 255, 255, 0.25) 1px, transparent 1px);
           background-size: 22px 22px;
           opacity: 0.35;
           pointer-events: none;
