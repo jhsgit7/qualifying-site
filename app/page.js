@@ -1,4 +1,4 @@
-import Link from "next/link";
+"use client";
 
 export default function Home() {
   const floatingItems = [
@@ -37,24 +37,18 @@ export default function Home() {
 
         <div className="card">
           <p className="small">for yumi</p>
-
           <h1>
             유미야
             <br />
             500일 축하해
             <br />
-            사랑해 🩵
+            사랑해
           </h1>
-
           <p className="sub">
             우리 함께한 500일,
             <br />
             앞으로도 예쁘게 오래오래 가자 🤍
           </p>
-
-          <Link href="/letter" className="letterButton">
-            편지 보러 가기
-          </Link>
         </div>
       </main>
 
@@ -127,29 +121,6 @@ export default function Home() {
           font-weight: 500;
         }
 
-        .letterButton {
-          display: inline-block;
-          margin-top: 32px;
-          padding: 16px 28px;
-          border-radius: 999px;
-          background: rgba(255, 255, 255, 0.72);
-          color: #6e4f43;
-          font-size: 17px;
-          font-weight: 700;
-          text-decoration: none;
-          border: 1px solid rgba(255, 255, 255, 0.9);
-          box-shadow: 0 10px 25px rgba(120, 90, 70, 0.12);
-          transition: all 0.25s ease;
-        }
-
-        .letterButton:hover {
-          transform: translateY(-3px) scale(1.03);
-          box-shadow:
-            0 14px 32px rgba(120, 90, 70, 0.16),
-            0 0 18px rgba(255, 255, 255, 0.95);
-          border-color: rgba(255, 255, 255, 1);
-        }
-
         .floating {
           position: absolute;
           z-index: 1;
@@ -199,12 +170,6 @@ export default function Home() {
 
           .sub {
             margin-top: 20px;
-          }
-
-          .letterButton {
-            margin-top: 26px;
-            padding: 14px 24px;
-            font-size: 16px;
           }
         }
       `}</style>
