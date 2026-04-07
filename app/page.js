@@ -1,77 +1,202 @@
 export default function QualifyingSite() {
   const services = [
     {
-      title: "AI Short-Form Production",
-      desc: "From idea generation to scripting, voice, editing, captions, and platform-ready export for Shorts, Reels, and TikTok.",
+      title: "Short-Form Content Engine",
+      desc: "High-conversion TikTok, Shorts, and Reels production using AI-assisted scripting, visual generation, editing, captions, and publishing workflows.",
+      points: ["Hook-first scripting", "Platform-native edits", "Fast weekly output"],
     },
     {
-      title: "Brand Content Systems",
-      desc: "We build repeatable AI workflows so your team can produce consistent content faster without losing tone or quality.",
+      title: "UGC + Ad Creative System",
+      desc: "Performance-oriented ad creatives, product explainers, and creator-style content built to test angles fast and scale what converts.",
+      points: ["Testing-ready concepts", "Paid social creative", "Offer-focused messaging"],
     },
     {
-      title: "Creative Automation",
-      desc: "Automate research, hooks, thumbnails, repurposing, and multi-platform adaptation with a practical production stack.",
+      title: "Content Automation Setup",
+      desc: "We build repeatable AI pipelines for research, ideation, repurposing, thumbnail generation, localization, and content ops.",
+      points: ["Workflow design", "AI tool stack", "Scalable publishing"],
     },
   ];
 
-  const steps = [
-    "Strategy and audience mapping",
-    "Content concept development",
-    "AI-assisted production pipeline",
-    "Editing, packaging, and launch",
+  const process = [
+    {
+      step: "01",
+      title: "Offer & audience mapping",
+      desc: "We identify the audience, the buying trigger, and the content angle that can actually produce leads or sales.",
+    },
+    {
+      step: "02",
+      title: "Creative system design",
+      desc: "We structure repeatable formats for organic content, UGC, and ad creatives so output stays consistent.",
+    },
+    {
+      step: "03",
+      title: "AI-assisted production",
+      desc: "Scripts, visuals, voice, editing, subtitles, hooks, and repurposing are executed through a fast content pipeline.",
+    },
+    {
+      step: "04",
+      title: "Launch, test, optimize",
+      desc: "Top concepts are scaled, low-performing angles are replaced, and the content system gets sharper each cycle.",
+    },
   ];
 
-  const stats = [
-    { label: "Content formats", value: "10+" },
-    { label: "Production speed", value: "Faster" },
-    { label: "Workflow focus", value: "Scalable" },
+  const metrics = [
+    { value: "3x", label: "Faster production cycles" },
+    { value: "10+", label: "Short-form content formats" },
+    { value: "24/7", label: "Idea generation workflow" },
+  ];
+
+  const offers = [
+    {
+      name: "Starter",
+      price: "$1.5k+",
+      desc: "For brands that need a clean AI content system and weekly short-form output.",
+      items: ["Strategy kickoff", "Short-form production", "Caption + packaging", "Monthly reporting"],
+    },
+    {
+      name: "Growth",
+      price: "$3k+",
+      desc: "For brands testing multiple content angles and scaling organic + paid creative.",
+      items: ["Creative testing system", "UGC/ad concepts", "Repurposing workflow", "Weekly optimization"],
+      featured: true,
+    },
+    {
+      name: "Custom",
+      price: "Custom",
+      desc: "For teams that need a tailored AI production stack, internal workflow buildout, or launch campaign.",
+      items: ["Custom pipeline build", "Ops consulting", "Team training", "Advanced integration"],
+    },
+  ];
+
+  const faqs = [
+    {
+      q: "What kind of companies do you work with?",
+      a: "Typically brands, founders, agencies, and growth teams that want short-form content tied to reach, leads, or revenue.",
+    },
+    {
+      q: "Do you only use AI?",
+      a: "No. We combine AI-assisted production with human creative direction so the output feels sharp, branded, and commercially usable.",
+    },
+    {
+      q: "Can this be used for ads too?",
+      a: "Yes. The same system can produce organic content, creator-style assets, landing page creatives, and paid social variations.",
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-teal-300 selection:text-black">
-      <section className="relative overflow-hidden border-b border-white/10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,210,190,0.18),transparent_28%),radial-gradient(circle_at_left,rgba(255,255,255,0.08),transparent_22%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.02),transparent,rgba(255,255,255,0.02))]" />
+    <div className="min-h-screen bg-black text-white selection:bg-cyan-300 selection:text-black">
+      <style>{`
+        .glass-card {
+          background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+          border: 1px solid rgba(255,255,255,0.10);
+          box-shadow: 0 30px 80px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.04);
+          backdrop-filter: blur(18px);
+        }
+        .apple-button {
+          position: relative;
+          overflow: hidden;
+          transform-style: preserve-3d;
+          transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+        }
+        .apple-button::before {
+          content: "";
+          position: absolute;
+          inset: -1px;
+          border-radius: inherit;
+          background: linear-gradient(120deg, rgba(255,255,255,0.06), rgba(255,255,255,0), rgba(255,255,255,0.1));
+          opacity: 0;
+          transition: opacity 0.28s ease;
+          pointer-events: none;
+        }
+        .apple-button:hover {
+          transform: translateY(-3px) scale(1.01);
+          border-color: rgba(255,255,255,0.7);
+          box-shadow: 0 0 0 1px rgba(255,255,255,0.35), 0 0 24px rgba(255,255,255,0.22), 0 18px 40px rgba(0,0,0,0.45);
+        }
+        .apple-button:hover::before {
+          opacity: 1;
+        }
+        .glow-line {
+          background: linear-gradient(90deg, rgba(255,255,255,0), rgba(122,255,242,0.9), rgba(255,255,255,0));
+        }
+      `}</style>
 
-        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-          <div className="grid items-center gap-14 lg:grid-cols-2">
+      <section className="relative overflow-hidden border-b border-white/10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(84,255,233,0.20),transparent_24%),radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_18%),radial-gradient(circle_at_bottom_left,rgba(0,120,255,0.12),transparent_22%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.02),transparent,rgba(255,255,255,0.02))]" />
+        <div className="absolute left-0 right-0 top-24 h-px glow-line" />
+
+        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-28">
+          <div className="mb-8 flex items-center justify-between gap-4">
+            <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-cyan-300 backdrop-blur">
+              QUALIFYING · AI Content Operating System
+            </div>
+            <div className="hidden rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-300 md:block">
+              Built for brands that want reach, leads, and speed
+            </div>
+          </div>
+
+          <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <div className="mb-6 inline-flex items-center rounded-full border border-teal-400/30 bg-white/5 px-4 py-2 text-sm text-teal-300 backdrop-blur">
-                QUALIFYING · AI Content Studio
-              </div>
-              <h1 className="max-w-3xl text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
-                We build AI content systems that move faster than traditional teams.
+              <h1 className="max-w-4xl text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
+                We design AI-powered content systems that help brands grow faster.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
-                QUALIFYING helps brands, creators, and companies turn ideas into scalable short-form and campaign content using practical AI production workflows.
+                QUALIFYING builds short-form content engines for TikTok, Shorts, Reels, UGC, and ad creatives so brands can produce faster, test smarter, and scale what actually works.
               </p>
-              <div className="mt-10 flex flex-wrap gap-4">
-                <button className="rounded-2xl bg-teal-400 px-6 py-3 font-semibold text-black shadow-lg shadow-teal-400/20 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-teal-400/30">
-                  Start a Project
+
+              <div className="mt-8 flex flex-wrap gap-4">
+                <button className="apple-button rounded-2xl border border-cyan-300/30 bg-cyan-300 px-6 py-3 font-semibold text-black shadow-[0_10px_35px_rgba(91,255,236,0.22)]">
+                  Book a Strategy Call
                 </button>
-                <button className="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white transition hover:border-teal-300/40 hover:bg-white/10">
-                  View Services
+                <button className="apple-button rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white">
+                  See Revenue-Focused Services
                 </button>
+              </div>
+
+              <div className="mt-10 grid gap-4 sm:grid-cols-3">
+                {metrics.map((metric) => (
+                  <div key={metric.label} className="glass-card rounded-3xl p-5">
+                    <div className="text-3xl font-black text-cyan-300">{metric.value}</div>
+                    <div className="mt-2 text-sm text-zinc-400">{metric.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-3">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl shadow-2xl shadow-black/30"
-                >
-                  <div className="text-3xl font-black text-teal-300">{stat.value}</div>
-                  <div className="mt-2 text-sm text-zinc-400">{stat.label}</div>
+            <div className="glass-card rounded-[2rem] p-6 lg:p-8">
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="text-sm uppercase tracking-[0.24em] text-zinc-400">Core outcome</div>
+                  <div className="mt-2 text-2xl font-bold">Make content a growth system</div>
                 </div>
-              ))}
-              <div className="sm:col-span-3 rounded-3xl border border-white/10 bg-gradient-to-br from-white/8 to-white/4 p-6 shadow-2xl shadow-teal-500/10">
-                <div className="text-sm uppercase tracking-[0.24em] text-zinc-400">Built for</div>
-                <div className="mt-4 grid gap-3 text-lg font-semibold text-white sm:grid-cols-2">
-                  <div className="rounded-2xl border border-white/10 bg-black/30 px-4 py-3">Short-form brands</div>
-                  <div className="rounded-2xl border border-white/10 bg-black/30 px-4 py-3">Growth teams</div>
-                  <div className="rounded-2xl border border-white/10 bg-black/30 px-4 py-3">Founders</div>
-                  <div className="rounded-2xl border border-white/10 bg-black/30 px-4 py-3">Creative studios</div>
+                <div className="rounded-2xl border border-white/10 bg-black/40 px-4 py-2 text-sm text-cyan-300">
+                  Conversion-minded
+                </div>
+              </div>
+
+              <div className="mt-6 space-y-4">
+                {[
+                  "Short-form content for reach and brand growth",
+                  "UGC and ad creative for testing offers faster",
+                  "Automation workflows that reduce production friction",
+                  "Content systems built for repeatable output, not one-off posts",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-black/30 px-4 py-4">
+                    <div className="mt-1 h-2.5 w-2.5 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(123,255,242,0.9)]" />
+                    <div className="text-zinc-300">{item}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4">
+                  <div className="text-sm text-zinc-400">Best for</div>
+                  <div className="mt-2 font-semibold">Founders, brands, growth teams</div>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4">
+                  <div className="text-sm text-zinc-400">Use cases</div>
+                  <div className="mt-2 font-semibold">Organic, paid social, product content</div>
                 </div>
               </div>
             </div>
@@ -80,52 +205,52 @@ export default function QualifyingSite() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="mb-10 flex items-end justify-between gap-6">
+        <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-sm uppercase tracking-[0.28em] text-teal-300">Services</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">What we actually do</h2>
+            <p className="text-sm uppercase tracking-[0.28em] text-cyan-300">Services</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Built around revenue-facing content production</h2>
           </div>
-          <p className="max-w-xl text-right text-zinc-400">
-            We focus on content execution, not vague AI hype. Strategy, production, and repeatable systems.
+          <p className="max-w-2xl text-zinc-400">
+            This is not generic content support. We help structure content production around traffic, creative testing, conversion, and scalable output.
           </p>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
           {services.map((service) => (
-            <div
-              key={service.title}
-              className="group rounded-3xl border border-white/10 bg-zinc-950 p-8 transition hover:-translate-y-1 hover:border-teal-300/40 hover:shadow-2xl hover:shadow-teal-500/10"
-            >
-              <div className="mb-5 h-1.5 w-16 rounded-full bg-gradient-to-r from-white to-teal-300" />
+            <div key={service.title} className="glass-card group rounded-[2rem] p-8 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:shadow-[0_30px_80px_rgba(65,255,236,0.12)]">
+              <div className="mb-5 h-1.5 w-16 rounded-full bg-gradient-to-r from-white via-cyan-300 to-transparent" />
               <h3 className="text-2xl font-bold text-white">{service.title}</h3>
               <p className="mt-4 leading-7 text-zinc-400">{service.desc}</p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {service.points.map((point) => (
+                  <span key={point} className="rounded-full border border-white/10 bg-black/35 px-3 py-1.5 text-sm text-zinc-300">
+                    {point}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
       </section>
 
       <section className="border-y border-white/10 bg-zinc-950/70">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
-          <div>
-            <p className="text-sm uppercase tracking-[0.28em] text-teal-300">Process</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-              A production workflow designed for speed and consistency
-            </h2>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-400">
-              We combine human creative direction with AI-assisted execution so content can scale without turning generic.
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <p className="text-sm uppercase tracking-[0.28em] text-cyan-300">Process</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">A practical workflow from idea to performance</h2>
+            </div>
+            <p className="max-w-2xl text-zinc-400">
+              Every stage is designed to reduce wasted creative effort and increase output quality, speed, and testing volume.
             </p>
           </div>
 
-          <div className="space-y-4">
-            {steps.map((step, index) => (
-              <div
-                key={step}
-                className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/40 px-5 py-4"
-              >
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-teal-400 font-black text-black">
-                  {index + 1}
-                </div>
-                <div className="text-lg font-medium text-white">{step}</div>
+          <div className="grid gap-5 lg:grid-cols-2">
+            {process.map((item) => (
+              <div key={item.step} className="glass-card rounded-[2rem] p-6">
+                <div className="text-sm font-semibold tracking-[0.3em] text-cyan-300">{item.step}</div>
+                <h3 className="mt-3 text-2xl font-bold">{item.title}</h3>
+                <p className="mt-4 leading-7 text-zinc-400">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -133,39 +258,137 @@ export default function QualifyingSite() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-2">
-          <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/30">
-            <p className="text-sm uppercase tracking-[0.28em] text-teal-300">Why QUALIFYING</p>
-            <h3 className="mt-4 text-3xl font-bold">Built for companies using AI seriously</h3>
-            <p className="mt-5 leading-8 text-zinc-400">
-              We are not just making visuals with AI. We design full content operations that support brand growth, campaign output, and scalable publishing.
-            </p>
+        <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p className="text-sm uppercase tracking-[0.28em] text-cyan-300">Offers</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Simple packages that can turn into real deals</h2>
           </div>
+          <p className="max-w-2xl text-zinc-400">
+            Clear offer structure improves conversion. Prospects should understand what they can buy and what result it is tied to.
+          </p>
+        </div>
 
-          <div className="rounded-[2rem] border border-teal-300/20 bg-gradient-to-br from-teal-400/10 to-white/5 p-8 shadow-2xl shadow-teal-500/10">
-            <p className="text-sm uppercase tracking-[0.28em] text-teal-300">Contact</p>
-            <h3 className="mt-4 text-3xl font-bold">Let’s build your AI content engine</h3>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              <input
-                className="rounded-2xl border border-white/10 bg-black/40 px-4 py-3 outline-none ring-0 placeholder:text-zinc-500 focus:border-teal-300"
-                placeholder="Your name"
-              />
-              <input
-                className="rounded-2xl border border-white/10 bg-black/40 px-4 py-3 outline-none ring-0 placeholder:text-zinc-500 focus:border-teal-300"
-                placeholder="Company"
-              />
-              <input
-                className="sm:col-span-2 rounded-2xl border border-white/10 bg-black/40 px-4 py-3 outline-none ring-0 placeholder:text-zinc-500 focus:border-teal-300"
-                placeholder="Email"
-              />
-              <textarea
-                className="sm:col-span-2 min-h-[120px] rounded-2xl border border-white/10 bg-black/40 px-4 py-3 outline-none ring-0 placeholder:text-zinc-500 focus:border-teal-300"
-                placeholder="Tell us about your content goals"
-              />
+        <div className="grid gap-6 lg:grid-cols-3">
+          {offers.map((offer) => (
+            <div
+              key={offer.name}
+              className={`rounded-[2rem] p-8 ${offer.featured ? "border border-cyan-300/30 bg-gradient-to-b from-cyan-300/10 to-white/5 shadow-[0_30px_80px_rgba(59,255,229,0.12)]" : "glass-card"}`}
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <div className="text-2xl font-bold">{offer.name}</div>
+                  <div className="mt-3 text-4xl font-black text-cyan-300">{offer.price}</div>
+                </div>
+                {offer.featured ? (
+                  <span className="rounded-full border border-cyan-300/30 bg-cyan-300/10 px-3 py-1 text-sm text-cyan-300">Most Popular</span>
+                ) : null}
+              </div>
+              <p className="mt-5 leading-7 text-zinc-400">{offer.desc}</p>
+              <div className="mt-6 space-y-3">
+                {offer.items.map((item) => (
+                  <div key={item} className="flex items-center gap-3 text-zinc-300">
+                    <div className="h-2.5 w-2.5 rounded-full bg-cyan-300" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <button className="apple-button mt-8 w-full rounded-2xl border border-white/15 bg-white/5 px-5 py-3 font-semibold text-white">
+                Request Proposal
+              </button>
             </div>
-            <button className="mt-5 rounded-2xl bg-white px-6 py-3 font-semibold text-black transition hover:-translate-y-0.5 hover:bg-teal-300">
-              Send Inquiry
-            </button>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-y border-white/10 bg-zinc-950/70">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+            <div className="glass-card rounded-[2rem] p-8">
+              <p className="text-sm uppercase tracking-[0.28em] text-cyan-300">Monetization Logic</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">A landing structure designed to convert better</h2>
+              <p className="mt-5 leading-8 text-zinc-400">
+                The site now has clearer offers, stronger revenue language, more concrete service framing, and more visible calls to action. This is the kind of structure that can support inbound leads better than a generic studio page.
+              </p>
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                {[
+                  "Clear pricing anchors",
+                  "Outcome-based service language",
+                  "High-intent CTA placement",
+                  "More trust-building sections",
+                ].map((item) => (
+                  <div key={item} className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-zinc-300">
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="glass-card rounded-[2rem] p-8">
+              <p className="text-sm uppercase tracking-[0.28em] text-cyan-300">Lead Capture</p>
+              <h3 className="mt-3 text-3xl font-bold">Let’s build your content engine</h3>
+              <p className="mt-4 text-zinc-400">
+                Use this section as your inquiry form, audit request CTA, or strategy-call funnel entry point.
+              </p>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <input className="rounded-2xl border border-white/10 bg-black/40 px-4 py-3 outline-none placeholder:text-zinc-500 focus:border-cyan-300" placeholder="Your name" />
+                <input className="rounded-2xl border border-white/10 bg-black/40 px-4 py-3 outline-none placeholder:text-zinc-500 focus:border-cyan-300" placeholder="Brand / company" />
+                <input className="sm:col-span-2 rounded-2xl border border-white/10 bg-black/40 px-4 py-3 outline-none placeholder:text-zinc-500 focus:border-cyan-300" placeholder="Email" />
+                <select className="sm:col-span-2 rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-zinc-400 outline-none focus:border-cyan-300">
+                  <option>What do you need help with?</option>
+                  <option>Short-form content</option>
+                  <option>UGC / ad creative</option>
+                  <option>Automation / workflow build</option>
+                  <option>Full content system</option>
+                </select>
+                <textarea className="sm:col-span-2 min-h-[140px] rounded-2xl border border-white/10 bg-black/40 px-4 py-3 outline-none placeholder:text-zinc-500 focus:border-cyan-300" placeholder="Tell us your goal, audience, and current content problem" />
+              </div>
+              <div className="mt-5 flex flex-wrap gap-4">
+                <button className="apple-button rounded-2xl border border-cyan-300/30 bg-cyan-300 px-6 py-3 font-semibold text-black shadow-[0_10px_35px_rgba(91,255,236,0.22)]">
+                  Request Free Audit
+                </button>
+                <button className="apple-button rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white">
+                  Get Pricing Deck
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <div className="mb-10">
+          <p className="text-sm uppercase tracking-[0.28em] text-cyan-300">FAQ</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Questions prospects usually ask before buying</h2>
+        </div>
+
+        <div className="grid gap-5 lg:grid-cols-3">
+          {faqs.map((item) => (
+            <div key={item.q} className="glass-card rounded-[2rem] p-6">
+              <h3 className="text-xl font-bold">{item.q}</h3>
+              <p className="mt-4 leading-7 text-zinc-400">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
+        <div className="rounded-[2rem] border border-white/10 bg-gradient-to-r from-white/6 via-cyan-300/10 to-white/6 p-8 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <p className="text-sm uppercase tracking-[0.28em] text-cyan-300">Final CTA</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Build a content system that can actually sell</h2>
+              <p className="mt-4 max-w-2xl text-zinc-300">
+                If your goal is not just posting more content but building a content machine that drives attention and qualified demand, QUALIFYING is built for that.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <button className="apple-button rounded-2xl border border-cyan-300/30 bg-cyan-300 px-6 py-3 font-semibold text-black shadow-[0_10px_35px_rgba(91,255,236,0.22)]">
+                Start With a Free Audit
+              </button>
+              <button className="apple-button rounded-2xl border border-white/15 bg-black/40 px-6 py-3 font-semibold text-white">
+                View Service Packages
+              </button>
+            </div>
           </div>
         </div>
       </section>
