@@ -1,4 +1,63 @@
 export default function QualifyingSite() {
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const handleAuditRequest = () => {
+    scrollToSection("lead-capture");
+  };
+
+  const handleServicesView = () => {
+    scrollToSection("services");
+  };
+
+  const handlePackagesView = () => {
+    scrollToSection("offers");
+  };
+
+  const handleStrategyCall = () => {
+    const subject = encodeURIComponent("Strategy Call Request - QUALIFYING");
+    const body = encodeURIComponent(
+      "Hi QUALIFYING,%0D%0A%0D%0AI'd like to book a strategy call.%0D%0A%0D%0ABrand / Company:%0D%0AGoal:%0D%0ACurrent content channels:%0D%0A%0D%0AThanks."
+    );
+    window.location.href = `mailto:hello@qualifying.studio?subject=${subject}&body=${body}`;
+  };
+
+  const handleProposalRequest = (offerName) => {
+    const subject = encodeURIComponent(`Proposal Request - ${offerName}`);
+    const body = encodeURIComponent(
+      `Hi QUALIFYING,%0D%0A%0D%0AI'd like a proposal for the ${offerName} package.%0D%0A%0D%0ABrand / Company:%0D%0AGoal:%0D%0ABudget range:%0D%0A%0D%0AThanks.`
+    );
+    window.location.href = `mailto:hello@qualifying.studio?subject=${subject}&body=${body}`;
+  };
+
+  const handlePricingDeck = () => {
+    const subject = encodeURIComponent("Pricing Deck Request - QUALIFYING");
+    const body = encodeURIComponent(
+      "Hi QUALIFYING,%0D%0A%0D%0APlease send me your pricing deck.%0D%0A%0D%0ABrand / Company:%0D%0AUse case:%0D%0A%0D%0AThanks."
+    );
+    window.location.href = `mailto:hello@qualifying.studio?subject=${subject}&body=${body}`;
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const name = form.get("name") || "";
+    const company = form.get("company") || "";
+    const email = form.get("email") || "";
+    const service = form.get("service") || "";
+    const message = form.get("message") || "";
+
+    const subject = encodeURIComponent(`Lead Inquiry from ${name || "Website Visitor"}`);
+    const body = encodeURIComponent(
+      `Name: ${name}%0D%0ACompany: ${company}%0D%0AEmail: ${email}%0D%0AService Needed: ${service}%0D%0A%0D%0AGoals / Notes:%0D%0A${message}`
+    );
+
+    window.location.href = `mailto:hello@qualifying.studio?subject=${subject}&body=${body}`;
+  };
   const services = [
     {
       title: "Short-Form Content Engine",
@@ -146,10 +205,16 @@ export default function QualifyingSite() {
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
-                <button className="apple-button rounded-2xl border border-cyan-300/30 bg-cyan-300 px-6 py-3 font-semibold text-black shadow-[0_10px_35px_rgba(91,255,236,0.22)]">
+                <button
+                  onClick={handleStrategyCall}
+                  className="apple-button rounded-2xl border border-cyan-300/30 bg-cyan-300 px-6 py-3 font-semibold text-black shadow-[0_10px_35px_rgba(91,255,236,0.22)]"
+                >
                   Book a Strategy Call
                 </button>
-                <button className="apple-button rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white">
+                <button
+                  onClick={handleServicesView}
+                  className="apple-button rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white"
+                >
                   See Revenue-Focused Services
                 </button>
               </div>
@@ -204,7 +269,7 @@ export default function QualifyingSite() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      <section id="services" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
         <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-sm uppercase tracking-[0.28em] text-cyan-300">Services</p>
@@ -257,7 +322,7 @@ export default function QualifyingSite() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      <section id="offers" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
         <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-sm uppercase tracking-[0.28em] text-cyan-300">Offers</p>
@@ -292,7 +357,10 @@ export default function QualifyingSite() {
                   </div>
                 ))}
               </div>
-              <button className="apple-button mt-8 w-full rounded-2xl border border-white/15 bg-white/5 px-5 py-3 font-semibold text-white">
+              <button
+                onClick={() => handleProposalRequest(offer.name)}
+                className="apple-button mt-8 w-full rounded-2xl border border-white/15 bg-white/5 px-5 py-3 font-semibold text-white"
+              >
                 Request Proposal
               </button>
             </div>
@@ -300,7 +368,7 @@ export default function QualifyingSite() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-zinc-950/70">
+      <section id="lead-capture" className="border-y border-white/10 bg-zinc-950/70">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
             <div className="glass-card rounded-[2rem] p-8">
@@ -329,24 +397,30 @@ export default function QualifyingSite() {
               <p className="mt-4 text-zinc-400">
                 Use this section as your inquiry form, audit request CTA, or strategy-call funnel entry point.
               </p>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <input className="rounded-2xl border border-white/10 bg-black/40 px-4 py-3 outline-none placeholder:text-zinc-500 focus:border-cyan-300" placeholder="Your name" />
-                <input className="rounded-2xl border border-white/10 bg-black/40 px-4 py-3 outline-none placeholder:text-zinc-500 focus:border-cyan-300" placeholder="Brand / company" />
-                <input className="sm:col-span-2 rounded-2xl border border-white/10 bg-black/40 px-4 py-3 outline-none placeholder:text-zinc-500 focus:border-cyan-300" placeholder="Email" />
-                <select className="sm:col-span-2 rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-zinc-400 outline-none focus:border-cyan-300">
+              <form onSubmit={handleFormSubmit} className="mt-6 grid gap-4 sm:grid-cols-2">
+                <input name="name" className="rounded-2xl border border-white/10 bg-black/40 px-4 py-3 outline-none placeholder:text-zinc-500 focus:border-cyan-300" placeholder="Your name" />
+                <input name="company" className="rounded-2xl border border-white/10 bg-black/40 px-4 py-3 outline-none placeholder:text-zinc-500 focus:border-cyan-300" placeholder="Brand / company" />
+                <input name="email" type="email" className="sm:col-span-2 rounded-2xl border border-white/10 bg-black/40 px-4 py-3 outline-none placeholder:text-zinc-500 focus:border-cyan-300" placeholder="Email" />
+                <select name="service" className="sm:col-span-2 rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-zinc-400 outline-none focus:border-cyan-300">
                   <option>What do you need help with?</option>
                   <option>Short-form content</option>
                   <option>UGC / ad creative</option>
                   <option>Automation / workflow build</option>
                   <option>Full content system</option>
                 </select>
-                <textarea className="sm:col-span-2 min-h-[140px] rounded-2xl border border-white/10 bg-black/40 px-4 py-3 outline-none placeholder:text-zinc-500 focus:border-cyan-300" placeholder="Tell us your goal, audience, and current content problem" />
-              </div>
+                <textarea name="message" className="sm:col-span-2 min-h-[140px] rounded-2xl border border-white/10 bg-black/40 px-4 py-3 outline-none placeholder:text-zinc-500 focus:border-cyan-300" placeholder="Tell us your goal, audience, and current content problem" />
+              </form>
               <div className="mt-5 flex flex-wrap gap-4">
-                <button className="apple-button rounded-2xl border border-cyan-300/30 bg-cyan-300 px-6 py-3 font-semibold text-black shadow-[0_10px_35px_rgba(91,255,236,0.22)]">
+                <button
+                  onClick={handleAuditRequest}
+                  className="apple-button rounded-2xl border border-cyan-300/30 bg-cyan-300 px-6 py-3 font-semibold text-black shadow-[0_10px_35px_rgba(91,255,236,0.22)]"
+                >
                   Request Free Audit
                 </button>
-                <button className="apple-button rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white">
+                <button
+                  onClick={handlePricingDeck}
+                  className="apple-button rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white"
+                >
                   Get Pricing Deck
                 </button>
               </div>
@@ -382,10 +456,16 @@ export default function QualifyingSite() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
-              <button className="apple-button rounded-2xl border border-cyan-300/30 bg-cyan-300 px-6 py-3 font-semibold text-black shadow-[0_10px_35px_rgba(91,255,236,0.22)]">
+              <button
+                onClick={handleAuditRequest}
+                className="apple-button rounded-2xl border border-cyan-300/30 bg-cyan-300 px-6 py-3 font-semibold text-black shadow-[0_10px_35px_rgba(91,255,236,0.22)]"
+              >
                 Start With a Free Audit
               </button>
-              <button className="apple-button rounded-2xl border border-white/15 bg-black/40 px-6 py-3 font-semibold text-white">
+              <button
+                onClick={handlePackagesView}
+                className="apple-button rounded-2xl border border-white/15 bg-black/40 px-6 py-3 font-semibold text-white"
+              >
                 View Service Packages
               </button>
             </div>
