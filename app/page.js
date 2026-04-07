@@ -16,56 +16,111 @@ export default function Home() {
 
   return (
     <>
-      <main className="container">
-        <div className="overlay" />
+      <main className="page">
+        <section className="hero">
+          <div className="overlay" />
 
-        {floatingItems.map((item, index) => (
-          <span
-            key={index}
-            className="floating"
-            style={{
-              left: item.left,
-              top: item.top,
-              fontSize: item.size,
-              animationDelay: item.delay,
-              animationDuration: item.duration,
-            }}
-          >
-            {item.type}
-          </span>
-        ))}
+          {floatingItems.map((item, index) => (
+            <span
+              key={index}
+              className="floating"
+              style={{
+                left: item.left,
+                top: item.top,
+                fontSize: item.size,
+                animationDelay: item.delay,
+                animationDuration: item.duration,
+              }}
+            >
+              {item.type}
+            </span>
+          ))}
 
-        <div className="card">
-          <p className="small">for yumi</p>
-          <h1>
-            유미야!
-            <br />
-            500일 축하해
-            <br />
-            사랑해🩵
-          </h1>
-          <p className="sub">
-            우주우주우주우주만큼 사랑해애💕,
-            <br />
-            세상에서 유미를 젤 사랑하는 석이가🤍
-          </p>
-        </div>
+          <div className="card">
+            <p className="small">for yumi</p>
+
+            <h1>
+              유미야!
+              <br />
+              500일 축하해
+              <br />
+              사랑해🩵
+            </h1>
+
+            <p className="sub">
+              우주우주우주우주만큼 사랑해애💕
+              <br />
+              세상에서 유미를 젤 사랑하는 석이가🤍
+            </p>
+
+            <a href="#letter" className="scrollButton">
+              밑으로 내려서 편지 보기
+            </a>
+          </div>
+        </section>
+
+        <section id="letter" className="letterSection">
+          <div className="letterCard">
+            <p className="letterSmall">to. yumi 🩵</p>
+            <h2>500일 편지</h2>
+
+            <div className="letterBox">
+              <p>
+                유미야, 우리 500일 정말 축하해.
+              </p>
+
+              <p>
+                너와 함께한 시간들이 쌓여서 어느새 500일이 되었다는 게
+                신기하면서도 너무 소중하게 느껴져.
+                함께했던 모든 순간들이 나한테는 특별한 추억이야.
+              </p>
+
+              <p>
+                기분 좋은 날도 있었고, 평범한 하루도 있었지만
+                그 시간들 속에 네가 있어서 더 예쁘고 따뜻하게 기억되는 것 같아.
+                네가 웃는 모습, 함께 나눈 대화,
+                같이 보낸 시간들이 나한테는 큰 행복이야.
+              </p>
+
+              <p>
+                500일 동안 내 곁에 있어줘서 고맙고,
+                앞으로도 지금처럼 서로 아껴주면서
+                오래오래 예쁜 추억 많이 만들고 싶어.
+              </p>
+
+              <p>
+                다시 한 번 500일 진심으로 축하하고,
+                앞으로의 시간도 지금보다 더 많이 웃고 더 많이 사랑하자.
+              </p>
+
+              <p>
+                유미야, 많이 사랑해 🩵
+              </p>
+
+              <p className="sign">from. 세상에서 유미를 젤 사랑하는 석이</p>
+            </div>
+          </div>
+        </section>
       </main>
 
       <style jsx>{`
-        .container {
+        html {
+          scroll-behavior: smooth;
+        }
+
+        .page {
+          background: linear-gradient(180deg, #f5e9dc 0%, #efe2d2 45%, #f8eee3 100%);
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .hero {
           position: relative;
           min-height: 100vh;
           overflow: hidden;
           display: flex;
           align-items: center;
           justify-content: center;
-          background:
-            radial-gradient(circle at top left, rgba(255, 255, 255, 0.65), transparent 32%),
-            radial-gradient(circle at bottom right, rgba(255, 240, 245, 0.65), transparent 28%),
-            linear-gradient(135deg, #f5e9dc 0%, #efe2d2 45%, #f8eee3 100%);
           padding: 24px;
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         .overlay {
@@ -121,6 +176,88 @@ export default function Home() {
           font-weight: 500;
         }
 
+        .scrollButton {
+          display: inline-block;
+          margin-top: 30px;
+          padding: 16px 28px;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.78);
+          color: #6e4f43;
+          text-decoration: none;
+          font-size: 16px;
+          font-weight: 700;
+          border: 1px solid rgba(255, 255, 255, 0.95);
+          box-shadow: 0 10px 25px rgba(120, 90, 70, 0.12);
+          transition: all 0.25s ease;
+        }
+
+        .scrollButton:hover {
+          transform: translateY(-3px) scale(1.03);
+          box-shadow:
+            0 14px 32px rgba(120, 90, 70, 0.16),
+            0 0 18px rgba(255, 255, 255, 0.95);
+        }
+
+        .letterSection {
+          padding: 80px 24px 100px;
+          display: flex;
+          justify-content: center;
+        }
+
+        .letterCard {
+          width: 100%;
+          max-width: 920px;
+          border-radius: 32px;
+          background: rgba(255, 255, 255, 0.42);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          box-shadow:
+            0 12px 40px rgba(120, 90, 70, 0.12),
+            inset 0 1px 0 rgba(255, 255, 255, 0.55);
+          border: 1px solid rgba(255, 255, 255, 0.6);
+          padding: 42px 24px;
+          text-align: center;
+          animation: fadeUp 1.2s ease;
+        }
+
+        .letterSmall {
+          margin: 0 0 10px;
+          font-size: 14px;
+          letter-spacing: 0.24em;
+          text-transform: uppercase;
+          color: #8c7062;
+          font-weight: 600;
+        }
+
+        h2 {
+          margin: 0 0 24px;
+          font-size: clamp(34px, 6vw, 56px);
+          color: #6e4f43;
+        }
+
+        .letterBox {
+          text-align: left;
+          margin: 0 auto;
+          max-width: 680px;
+          padding: 30px 24px;
+          border-radius: 24px;
+          background: rgba(255, 255, 255, 0.68);
+          color: #6b564c;
+          line-height: 1.95;
+          font-size: clamp(16px, 2vw, 20px);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+        }
+
+        .letterBox p {
+          margin: 0 0 18px;
+        }
+
+        .sign {
+          margin-top: 28px;
+          text-align: right;
+          font-weight: 700;
+        }
+
         .floating {
           position: absolute;
           z-index: 1;
@@ -163,13 +300,29 @@ export default function Home() {
         }
 
         @media (max-width: 640px) {
-          .card {
+          .card,
+          .letterCard {
             padding: 38px 20px;
             border-radius: 24px;
           }
 
           .sub {
             margin-top: 20px;
+          }
+
+          .scrollButton {
+            margin-top: 24px;
+            padding: 14px 22px;
+            font-size: 15px;
+          }
+
+          .letterSection {
+            padding: 60px 16px 80px;
+          }
+
+          .letterBox {
+            padding: 24px 18px;
+            line-height: 1.85;
           }
         }
       `}</style>
