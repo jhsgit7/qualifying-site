@@ -43,7 +43,7 @@ export default function Home() {
             <br />
             500일 축하해
             <br />
-            사랑해🩵
+            사랑해 🩵
           </h1>
 
           <p className="sub">
